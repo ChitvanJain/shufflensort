@@ -6,10 +6,8 @@ const render = (shuffle) => {
     })
     if (shuffle) {
         for (let i = tiles.length - 1; i > 0; i--) {
-            let j = Math.floor(Math.random() * i);
-            let temp = tiles[i];
-            tiles[i] = tiles[j];
-            tiles[j] = temp;
+            const j = Math.floor(Math.random() * i);
+            [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
         }
     }
     else {
